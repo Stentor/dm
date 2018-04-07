@@ -1,0 +1,12 @@
+@function px2rem($size, $base: $base-font-size)
+{
+  @return ($size/$base)*1rem;
+}
+
+@function font-scale($level, $base: $base-font-size)
+{
+  $factor: power($font-scale-factor,$level);
+  $size: $base-font-size*$factor;
+  @return px2rem($size, $base);
+}
+

@@ -1,0 +1,32 @@
+{{ form.renderGlobalErrors() }}
+
+<ul class="dm_form_elements">
+
+<li class="dm_form_element multi_inputs sort clearfix">
+  {{ form['orderField'].renderLabel(__('Order by')) }}
+  {{ form['orderField'].render() }}
+  {{ form['orderType'].render({'class' : 'ml10'}) }}
+</li>
+<li class="dm_form_element multi_inputs pagination clearfix">
+  {{ form['maxPerPage'].renderError() }}
+  {{ form['maxPerPage'].renderLabel(__('Per page')) }}
+  {{ form['maxPerPage'].render({'class':'fleft'}) }}
+  <div class="checkbox_list">
+    {{ form['navTop'].render({'class' : 'ml10 fnone'}) }}
+    {{ form['navTop'].renderLabel('Top', {'class' : 'ml10 fnone'}) }}
+    {{ form['navBottom'].render({'class' : 'ml10 fnone'}) }}
+    {{ form['navBottom'].renderLabel('Bottom', {'class' : 'ml10 fnone'}) }}
+  </div>
+</li>
+
+{# Show list filters #}
+
+ {% for widgetName, widget in form %}
+   {% if 'Filter' == widgetName|slice(-1,6) %}
+     {{ widget.renderRow() }}
+   {% endif %}
+ {% endfor %}
+
+{{ form['cssClass'].renderRow() }}
+
+</ul>

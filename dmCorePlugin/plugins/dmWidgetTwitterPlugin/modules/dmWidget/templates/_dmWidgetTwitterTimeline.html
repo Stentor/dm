@@ -1,0 +1,6 @@
+<ul>
+    {% for tweet in tweets %}
+    <p>{{tweet.text|auto_link}}</p>
+    <p>{{tweet.created_at|date}}</p>
+    {% endfor %}
+</ul>

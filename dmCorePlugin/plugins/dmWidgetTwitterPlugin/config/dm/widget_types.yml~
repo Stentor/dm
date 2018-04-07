@@ -1,0 +1,9 @@
+dmWidgetTwitter:
+
+  searche:
+    cache:              false
+    public_name:        Twitter search
+
+  timeline:
+    cache:              false
+    public_name:        Twitter timeline

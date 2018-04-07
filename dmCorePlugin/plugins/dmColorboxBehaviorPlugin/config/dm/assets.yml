@@ -1,0 +1,11 @@
+js:
+  dmColorboxBehaviorPlugin:
+    launch: dmColorboxBehavior
+    form: form
+css:
+  dmColorboxBehaviorPlugin:
+    theme1: example1/colorbox
+    theme2: example2/colorbox
+    theme3: example3/colorbox
+    theme4: example4/colorbox
+    theme5: example5/colorbox

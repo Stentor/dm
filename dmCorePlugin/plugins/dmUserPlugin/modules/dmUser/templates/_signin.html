@@ -1,0 +1,24 @@
+
+{% if sf_user.isAuthenticated() %}
+  {{ dm.tag('p', __('You are authenticated as %username%', {'%username%' : sf_user.getUsername()})) }}
+{% else %}
+
+{{ form.open('.dm_signin_form action=@signin') }}
+
+{{ dm.tag('ul.dm_form_elements',
+
+  dm.tag('li.dm_form_element', form['username'].label().field().error()) ~
+
+  dm.tag('li.dm_form_element', form['password'].label().field().error()) ~
+
+  dm.tag('li.dm_form_element', form['remember'].label().field().error())
+
+) }}
+
+{{ form.renderHiddenFields() }}
+
+{{ form.submit(__('Signin')) }}
+
+{{ form.close() }}
+
+{% endif %}

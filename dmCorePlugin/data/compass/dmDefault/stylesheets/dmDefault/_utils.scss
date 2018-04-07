@@ -1,0 +1,112 @@
+@mixin form($color: black,$background: white, $radius: 0, $font: $base-font-family,$make-btn: true, $margin: 0){
+
+
+color: $color;
+
+ul{ margin: 0; }
+.dm_form_element{
+	margin: 20px 0;
+	list-style: none;
+	display: block;
+	position: relative;
+}
+label{   font-size: $smallpx + ($smallpx / 3); margin-bottom: 7px; display: none;  }
+
+input[type='text'], textarea, select{
+        color: $color;
+        background: lighten($background,0.5%);
+        border: 0;
+        width: 90%;
+        font-family: $font;
+        font-size: $normpx;
+        padding: 10px;
+        margin: $margin;
+        @include border-radius($radius);
+    }
+
+    select{ width: 97%; }
+
+   	@if $make-btn == true {
+	    	input[type='text']:focus, textarea:focus, button:hover, input[type='submit']:hover{
+			color: darken($color,50%);
+			background: lighten($background,50%);
+			transition: all 0.2s ease-in-out;
+    	}
+	    button, input[type='submit']{
+	    	margin: $margin;
+	        display: inline-block;
+	        border: 0;
+	        background: $color url(../images/bg_button.png) no-repeat;
+	        color: $background;
+	        padding:  10px;
+	        font-family: $font;
+	        cursor: pointer;
+	        @include border-radius($radius);
+	    }
+
+
+	}
+	@else {
+		input[type='text']:focus, textarea:focus{
+			color: darken($color,50%);
+			background: lighten($background,50%);
+			transition: all 0.2s ease-in-out;
+		}
+	}
+
+	.error, .error_list {
+        li{
+        	position: absolute;
+        	width: 10px;
+        	height: 10px;
+        	right: 17px;
+        	top: 20%;
+        	list-style: none;
+            text-align: center;
+            background: url(../images/icons/error.png) 50% center no-repeat;
+            background-size: 100%;
+            text-indent: -1000px;
+            padding: 7px;
+            overflow: hidden;
+            display: block;
+        }
+    }
+
+}
+
+
+@mixin triangle-background($width, $height, $color) {
+    position: relative;
+    padding-bottom: $height;
+    &::after {
+        $w_int: $width/1px;
+        $h_int: $height/1px;
+        $v_pad: ($height / $width) * 100 + 1;
+        // we must use rgb because the # in hex doesn't work in some browsers
+        $rgb_color: 'rgb(#{red($color)}, #{green($color)}, #{blue($color)})';
+
+        padding: #{$v_pad}% 0 0;
+        background-position: 50%;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="#{$w_int}" height="#{$h_int}"><polygon points="0,0 0,#{$h_int} #{$w_int},#{$h_int} #{$w_int},0 #{$w_int/2},#{$h_int}" style="fill:#{$rgb_color};stroke:#{$rgb_color};stroke-width:0"></polygon></svg>');
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        width: 100%;
+        height: 0;
+        bottom: 0;
+        content: '';
+    }
+}
+
+@function px2rem($size, $base: $base-font-size)
+{
+  @return ($size/$base)*1rem;
+}
+
+@function font-scale($level, $base: $base-font-size)
+{
+  $factor: power($font-scale-factor,$level);
+  $size: $base-font-size*$factor;
+  @return px2rem($size, $base);
+}
+

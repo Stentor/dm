@@ -1,0 +1,23 @@
+<?php
+
+//PHP built-in server doesn't like + in urls, so we set them back.
+$_SERVER["PATH_INFO"] = str_replace(' ', '+', $_SERVER["PATH_INFO"]);
+$_SERVER["PHP_SELF"] = str_replace(' ', '+', $_SERVER["PHP_SELF"]);
+
+
+$route = parse_url(substr($_SERVER["REQUEST_URI"], 1))["path"];
+
+// Route static files as-is.
+if ($route != '' && $route != 'index.php' && file_exists('web/'.$route))
+	return false;
+
+// We only want dev environment, this is not a production setting.
+if (preg_match('/admin/', $route))
+{
+	require 'web/admin_dev.php';
+	exit;
+}
+else{
+	require 'web/dev.php';
+	exit;
+}

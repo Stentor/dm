@@ -1,0 +1,12 @@
+<div id="dm_page" {% if isEditMode %} class="edit" {% endif %} >
+	<div class="dm_layout">
+		{{ helper.renderArea('layout.top', '.cf') }}
+		<div class="dm_layout_center cf">
+			{{ helper.renderArea('layout.left') }}
+			{{ helper.renderArea('layout.right') }}
+			{{ helper.renderArea('page.content') }}
+		</div>
+		{{ helper.renderArea('layout.bottom', '.cf') }}
+	</div>
+</div>
+{{ helper.renderBehaviors() }}

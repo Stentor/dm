@@ -1,0 +1,41 @@
+// Links
+$link-color:              #08c;
+$link-color-hover:        darken($link-color, 15%);
+
+// Grays
+$black:                   #000;
+$gray-darker:             #222;
+$gray-dark:               #333;
+$gray:                    #555;
+$gray-light:              #999;
+$gray-lighter:            #eee;
+$white:                   #fff;
+
+//Typography
+$base-font-family:        "Ubuntu";
+$base-font-size:          13px;
+$font-scale-factor:       1.14;
+$base-line-height:        1.5em;
+$text-color:              $gray-dark;
+
+$font-size-normal:        font-scale(0);
+$font-size-h6:            font-scale(0);
+$font-size-h5:            font-scale(1);
+$font-size-h4:            font-scale(2);
+$font-size-h3:            font-scale(3);
+$font-size-h2:            font-scale(4);
+$font-size-h1:            font-scale(5);
+
+
+// Grid System
+$total-columns:           24;
+$column-width:            32px;
+$gutter-width:            10px;
+$grid-padding:            0;//$gutter-width;
+$container-style:         magic;
+$show-grid-backgrounds:   true;
+
+// Breakpoints
+$desktop:                 800px $total-columns;
+$tablet:                  0px $total-columns/2 799px;
+

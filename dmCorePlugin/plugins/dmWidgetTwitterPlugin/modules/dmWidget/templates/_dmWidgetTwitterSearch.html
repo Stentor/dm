@@ -1,0 +1,7 @@
+<ul>
+    {% for tweet in tweets %}
+    <li>{{dm.media(tweet.avatar)}}{{dm.link('http://twitter.com/'~tweet.from_user).text(tweet.from_user)}}
+    <p>{{tweet.text|auto_link}}</p>
+    </li>
+    {% endfor %}
+</ul>

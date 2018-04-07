@@ -1,0 +1,46 @@
+{{ form.renderGlobalErrors() }}
+
+<div class="dm_tabbed_form">
+<ul class="tabs">
+<li>{{ dm.link('#' ~ baseTabId ~ '_text').text(__('Text')) }}</li>
+<li>{{ dm.link('#' ~ baseTabId ~ '_media').text(__('Media')) }}</li>
+<li>{{ dm.link('#' ~ baseTabId ~ '_links').text(__('Links')) }}</li>
+<li>{{ dm.link('#' ~ baseTabId ~ '_advanced').text(__('Presentation')) }}</li>
+</ul>
+
+<div id="{{ baseTabId ~ '_text' }}">
+	<ul class="dm_form_elements">
+      {{ form['title'].renderRow() }}
+      {{ form['text'].render({'class':'dm_markdown'}) }}
+  </ul>
+</div>
+
+<div id="{{ baseTabId ~ '_media' }}">
+{{ dm.renderPartial('dmWidget', 'forms/dmWidgetContentImage', {
+    'form':form,
+    'hasMedia':hasMedia,
+    'skipCssClass':true
+  }) }}
+</div>
+
+<div id="{{ baseTabId ~ '_links' }}">
+  <ul class="dm_form_elements">
+    <li class="dm_form_element clearfix">
+      {{ form['titleLink'].label(__('Title')).field().error() }}
+      <p class="dm_help"> {{ __('Add a link to the text title') }}<br />{{ __('Drag & Drop a page or enter an url') }}</p>
+    </li>
+    <li class="dm_form_element clearfix">
+      {{ form['mediaLink'].label(__('Media')).field().error() }}
+      <p class="dm_help">{{ __('Add a link to the text media') }}<br />{{ __('Drag & Drop a page or enter an url') }}</p>
+    </li>
+  </ul>
+</div>
+
+<div id="{{ baseTabId ~ '_advanced' }}">
+  <ul class="dm_form_elements">
+    {{ form['cssClass'].renderRow() }}
+    {{ form['titlePosition'].renderRow() }}
+  </ul>
+</div>
+
+</div>

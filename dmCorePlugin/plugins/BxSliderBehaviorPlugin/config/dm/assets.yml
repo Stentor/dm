@@ -1,0 +1,10 @@
+js:
+  BxSliderBehaviorPlugin:
+    slider: ../vendor/bxslider-4/jquery.bxslider
+    easing: ../vendor/bxslider-4//plugins/jquery.easing.1.3
+    vids: ../vendor/bxslider-4/plugins/jquery.fitvids
+    launch: bxSliderBehavior
+    form: form
+css:
+  BxSliderBehaviorPlugin:
+    style: ../vendor/bxslider-4/jquery.bxslider

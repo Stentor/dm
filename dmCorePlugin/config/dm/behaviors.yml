@@ -1,0 +1,8 @@
+## Default behaviors - remove them if you do not want them
+---
+dmBehaviors:
+  dmTipsyBehavior:
+    section: Utility
+    name: Tipsy
+    form: dmTipsyBehaviorForm
+    view: dmTipsyBehaviorView

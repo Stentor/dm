@@ -1,0 +1,3 @@
+default:
+  view_class: sfTwig
+  partial_view_class: sfTwig

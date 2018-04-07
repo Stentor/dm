@@ -1,0 +1,42 @@
+{{ form.renderGlobalErrors() }}
+
+<div class="dm_tabbed_form">
+
+<ul class="tabs">
+  <li>{{ dm.link('#' ~ baseTabId ~ '_items').text(__('Items')) }}</li>
+  <li>{{ dm.link('#' ~ baseTabId ~ '_advanced').text(__('Advanced')) }}</li>
+</ul>
+
+<div id="{{ baseTabId ~ '_items'}}" class="drop_zone">
+{{  dm.tag('ol.items_list',{'json' : {
+    'items' : items,
+    'extended_show_message' : __('Show extended options'),
+    'extended_hide_message' : __('Hide extended options'),
+    'delete_message' : __('Remove'),
+    'text_message' : __('Text'),
+    'link_message' : __('Link'),
+    'secure_message' : __('Requires authentication'),
+    'nofollow_message' : __('No follow'),
+    'depth_message' : __('Depth'),
+    'target_message' : __('Target'),
+    'click_message' : __('Click to edit, drag to sort')
+  } }, '') }}
+  <div class="dm_help no_margin">
+    {{ __('Drag & drop links here from the left PAGE panel') }}
+    <br />
+    <a class="external_link">{{ __('or create an external link') }}</a>
+  </div>
+</div>
+
+<div id="{{ baseTabId ~ '_advanced'}}" >
+
+	<ul class="dm_form_elements">
+		{{ form['cssClass'].renderRow() }}
+		{{ form['ulClass'].renderRow() }}
+		{{ form['menuName'].renderRow() }}
+		{{ form['liClass'].renderRow() }}
+		{{ form['menuClass'] ? form['menuClass'].renderRow() : '' }}
+  </ul>
+</div>
+
+</div>

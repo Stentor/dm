@@ -1,0 +1,7 @@
+.navigation_sub_menu li.dm_current>a{
+    display: none;
+
+}
+.navigation_sub_menu li.dm_current{
+    padding: 0;
+}

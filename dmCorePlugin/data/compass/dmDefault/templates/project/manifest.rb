@@ -1,0 +1,17 @@
+# Make sure you list all the project template files here in the manifest.
+stylesheet 'main.scss', :media => 'screen, projection'
+stylesheet 'config/_variables.scss', :media => 'screen, projection'
+stylesheet 'config/_fonts.scss', :media => 'screen, projection'
+stylesheet 'base/_typography.scss', :media => 'screen, projection'
+stylesheet 'base/_grid.scss', :media => 'screen, projection'
+stylesheet 'modules/_dm_widgets.scss', :media => 'screen, projection'
+stylesheet 'modules/_menu.scss', :media => 'screen, projection'
+stylesheet 'layouts/_default.scss', :media => 'screen, projection'
+stylesheet 'mixins/_default.scss', :media => 'screen, projection'
+stylesheet 'placeholders/_default.scss', :media => 'screen, projection'
+stylesheet 'functions/_default.scss', :media => 'screen, projection'
+
+font 'Ubuntu-R.eot'
+font 'Ubuntu-R.svg'
+font 'Ubuntu-R.ttf'
+font 'Ubuntu-R.woff'

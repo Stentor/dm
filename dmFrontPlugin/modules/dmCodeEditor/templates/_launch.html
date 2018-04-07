@@ -1,0 +1,11 @@
+<?php
+
+{{ dm.tag('div.dm_code_editor_wrap',
+  dm.tag('div.dm_code_editor',
+    dm.tag('ul.tabs',
+      dm.tag('li.dm_file_open',
+        dm.tag('a.s16block.s16_folder_open href=#dm_code_editor_file_open title=Open', 'Open')
+      )
+    ) ~ dm.tag('div#dm_code_editor_file_open', fileMenu.render())
+  )
+) }}

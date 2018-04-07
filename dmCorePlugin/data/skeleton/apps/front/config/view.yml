@@ -1,0 +1,16 @@
+default:
+  
+  http_metas:
+    content-type: text/html
+    X-UA-Compatible: IE=edge
+  metas:
+    viewport: width=device-width, initial-scale=1
+
+  stylesheets:
+    - main
+
+  javascripts:
+    - front
+
+  has_layout:     true
+  layout:         layout

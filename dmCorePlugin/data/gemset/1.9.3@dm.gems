@@ -1,0 +1,19 @@
+# 1.9.3@dm.gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
+
+breakpoint -v2.4.6
+chunky_png -v1.3.1
+compass-core -v1.0.0.alpha.19
+compass-import-once -v1.0.4
+compass -v1.0.0.alpha.19
+ffi -v1.9.3
+listen -v1.1.6
+modular-scale -v2.0.5
+multi_json -v1.10.1
+rb-fsevent -v0.9.4
+rb-inotify -v0.9.5
+rb-kqueue -v0.2.3
+sass -v3.3.11
+sassy-maps -v0.4.0
+susy -v2.1.2
+sassy-math -v1.5.1
+sass-globbing -v1.1.5

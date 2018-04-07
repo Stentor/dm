@@ -1,0 +1,4 @@
+dmBitLyUrl:
+  columns:
+    short:          { type: string(32), notnull: true, unique: true }
+    expanded:       { type: string(1000), notnull: true }

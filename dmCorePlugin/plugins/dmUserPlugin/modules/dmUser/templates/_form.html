@@ -1,0 +1,32 @@
+
+{% if sf_user.isAuthenticated() %}
+  {{ dm.tag('p', __('You are authenticated as %username%', {'%username%' : sf_user.getUsername()})) }}
+{% else %}
+
+{{ form.open('.dm_register_form') }}
+
+{{ dm.open('ul.dm_form_elements') }}
+
+{{ dm.tag('li.dm_form_element', form['username'].label().field().error()) }}
+
+{{ dm.tag('li.dm_form_element', form['email'].label().field().error()) }}
+
+{{ dm.tag('li.dm_form_element', form['password'].label().field().error()) }}
+
+{{ dm.tag('li.dm_form_element', form['password_again'].label().field().error()) }}
+
+  {# render captcha if enabled #}
+  {% if form.isCaptchaEnabled() %}
+	{{ dm.tag('li.dm_form_element', form['captcha'].label(null, 'for=false').field().error()) }}
+  {% endif %}
+
+
+{{ dm.close('ul') }}
+
+{{ form.renderHiddenFields() }}
+
+{{ form.submit(__('Register')) }}
+
+{{ form.close() }}
+
+{% endif %}

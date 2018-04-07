@@ -1,0 +1,8 @@
+js:
+  dmWidgetNavigationSubMenu:
+    form:      form
+
+css:
+    dmWidgetNavigationSubMenu:
+    view:      view
+    form:      form

@@ -1,0 +1,42 @@
+{# echo $form->renderGlobalErrors(); #}
+
+<div class="toggle_group">
+
+{{ form['mediaId'].render({'class':'dm_media_id'}) }}
+
+{% if hasMedia %}
+  <a class="show_media_fields toggler">{{ __('Change file') }}</a>
+{% endif %}
+<ul class="media_fields {{ hasMedia ? 'none' : '' }} ">
+{{ form['mediaName'].renderRow() }}
+{{ form['file'].renderRow() }}
+{{ form['removeMedia'].renderRow() }}
+</ul>
+</div>
+
+{% if hasMedia %}
+<ul class="dm_form_elements">
+ {{ form['legend'].renderRow() }}
+    <li class="dm_form_element multi_inputs thumbnail clearfix">
+      {{ form['width'].renderError() }}
+      {{ form['height'].renderError() }}
+      <label>{{__('Dimensions') }}</label>
+      {{ form['width'].render() }}x{{ form['height'].render() }}
+      {{ form['method'].label('', {'class':'ml10 mr10 fnone'}).field('.dm_media_method').error() }}
+    </li>
+    <li class="dm_form_element multi_inputs background clearfix none">
+      {{ form['background'].renderError() }}
+      {{ form['background'].label().field().error() }}
+    </li>
+    {{ form['quality'].renderRow() }}
+    {{ form['link'] ? form['link'].renderRow({'class':'dm_link_droppable'}) : '' }}
+    {% if isSvg == 1%}
+    {{ form['inline_svg'].renderRow() }}
+    {% endif %}
+  </ul>
+{% endif %}
+
+{% if not skipCssClass %}
+  {{ form['cssClass'].renderRow() }}
+{% endif %}
+

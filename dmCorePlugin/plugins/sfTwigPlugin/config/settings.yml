@@ -1,0 +1,3 @@
+all:
+  .settings:
+    twig_extensions: [Dm_Twig_Extension]

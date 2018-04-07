@@ -1,0 +1,6 @@
+dmBehaviors:
+  bxSliderBehavior:
+    section: Slider
+    name: bxslider
+    form: bxSliderBehaviorForm
+    view: bxSliderBehaviorView

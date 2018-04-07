@@ -1,0 +1,24 @@
+$main-menu-config:(
+         align: left,
+         color: $text-color,
+         hover: white,
+         background: white,
+         background-hover: $text-color,
+         orientation: horizontal,
+         separator: '',
+         margin: 0,
+         padding:0,
+         separator-margin:0 5px,
+         separator-padding: 0 5px,
+         separator-color: transparent,
+         separator-background: red,
+         font: $base-font-family,
+         border: none,
+         border-radius: 0,
+         display: inline-block,
+         height: auto
+  );
+
+.main_menu{
+  @include make-menu($main-menu-config...);
+}

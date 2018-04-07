@@ -1,0 +1,12 @@
+parameters:
+
+  bit_ly_api.class:         dmBitLyApi
+  bit_ly_api.login:                       # your login, get it at http://bit.ly/account/register?rd=/
+  bit_ly_api.api_key:                     # your api key, get it at http://bit.ly/account/register?rd=/
+
+services:
+
+  bit_ly_api:
+    class:                  %bit_ly_api.class%
+    shared:                 true
+    arguments:              [ %bit_ly_api.login%, %bit_ly_api.api_key%, @web_browser ]

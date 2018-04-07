@@ -1,0 +1,6 @@
+dmBehaviors:
+  dmColorboxBehavior:
+    section: Media Gallery
+    name: Colorbox
+    form: dmColorboxBehaviorForm
+    view: dmColorboxBehaviorView

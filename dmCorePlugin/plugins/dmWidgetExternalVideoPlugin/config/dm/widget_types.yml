@@ -1,0 +1,10 @@
+dmWidgetExternalVideo:
+
+  youtube:
+    cache:              false
+
+  dailymotion:
+    cache:              false
+
+  vimeo:
+    cache:              false

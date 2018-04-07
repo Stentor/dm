@@ -1,0 +1,12 @@
+cache
+web/cache
+.sass-cache
+log
+base
+!web/theme/sass/base
+web/dm*
+web/sf*
+web/theme/css
+web/theme/images/sprites/*.png
+.thumbs
+node_modules

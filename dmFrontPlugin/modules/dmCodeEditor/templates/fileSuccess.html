@@ -1,0 +1,8 @@
+{{ dm.tag('textarea.dm_code' ~ (isWritable ? '' : '.dm_readonly'), textareaOptions, code) }}
+
+{{ dm.tag('div.file.clearfix', 
+		dm.tag('div.actions.fright', (isWritable ? dm.tag('a.save', __('Save') ~ ' (Ctrl+S)') : '')) 
+	~ 	dm.tag('span.info' ~ (isWritable ? '' : '.error'), message)
+) }}
+
+<input type="hidden" value="{{ path }}" class="path" />

@@ -1,0 +1,3 @@
+# default values
+all:
+  render_mode: sfTwig

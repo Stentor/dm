@@ -1,0 +1,55 @@
+%default{
+	@include at-breakpoint($desktop)
+	{
+		.dm_layout {
+			@include container;
+			@include susy-grid-background;
+		}
+
+		.dm_layout_top {
+
+		}
+
+		.dm_page_content {
+			@include span-columns(16);
+		}
+
+		.dm_layout_left {
+			@include span-columns(4);
+		}
+		.dm_layout_right {
+			@include span-columns(4 omega);
+		}
+
+		.dm_layout_bottom {
+
+		}
+	}
+
+	@include at-breakpoint($tablet)
+	{
+		.dm_layout {
+			@include container;
+			@include susy-grid-background;
+		}
+
+		.dm_layout_top {
+
+		}
+
+		.dm_page_content {
+
+		}
+
+		.dm_layout_left {
+			@include span-columns(6);
+		}
+		.dm_layout_right {
+			@include span-columns(6 omega);
+		}
+
+		.dm_layout_bottom {
+
+		}
+	}
+}

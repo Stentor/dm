@@ -1,0 +1,18 @@
+//Grid System
+
+@for $i from 1 through $total-columns {
+.span#{$i} {@include span-columns($i);}
+}
+
+@for $i from 1 through $total-columns {
+.offset#{$i} {@include push($i);}
+}
+
+.omega {
+@include omega;
+}
+
+.endrow {
+  display: inline;
+  margin-right: 0;
+}

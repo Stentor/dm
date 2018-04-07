@@ -1,0 +1,100 @@
+@mixin make-menu($align: left,
+         $color: $text-color,
+         $hover: white,
+         $background: white,
+         $background-hover: $text-color,
+         $orientation: horizontal,
+         $separator: '',
+         $margin: 0,
+         $padding:0,
+         $separator-margin:0,
+         $separator-padding: 0,
+         $separator-color: black,
+         $separator-background: red,
+         $font: $base-font-family,
+         $border: none,
+         $border-radius: 0,
+         $display: inline-block,
+         $height: auto){
+
+  text-align: $align;
+  ul,li,a,span{ outline: none }
+  .first a.dm_parent, .first span.dm_parent{
+      color: $color;
+      height: $height;
+      display: $display;
+      background: $background-hover;
+      padding: $padding;
+      border: $border;
+      @include border-radius($border-radius);
+  }
+  .first a.dm_parent:hover, .first span.dm_parent:hover{
+      color: $hover;
+      height: $height;
+      display: $display;
+      background: $background-hover;
+      padding: $padding;
+      border: $border;
+      @include border-radius($border-radius);
+  }
+
+  a.dm_current, span.dm_current, a.dm_parent, span.dm_parent{
+      color: $hover;
+      height: $height;
+      display: $display;
+      background: $background-hover;
+      padding: $padding;
+      border: $border;
+      @include border-radius($border-radius);
+    }
+  ul{
+    margin:0;
+    padding:0;
+
+    @if $orientation==horizontal
+    {
+      display: inline-block;
+      li { float: left;}
+    }
+    @if $orientation==vertical
+    {
+      display: block;
+    }
+    li{
+      margin: $margin;
+      list-style: none;
+      @if $separator!=''{
+        &:after{ text-align: center;
+             content: $separator;
+             margin: $separator-margin;
+             padding: $separator-padding;
+             color: $separator-color;
+             vertical-align: middle;
+             background: $separator-background;
+             display: inline-block;}
+      &:last-child{
+        &:after{ content: ""; margin: 0; padding: 0 }
+      }
+    }
+
+    a{
+      padding: $padding;
+      height: $height;
+      font-family: $font;
+      display: $display;
+      color: $color;
+      background: $background;
+      border: $border;
+      @include border-radius($border-radius);
+      cursor: pointer;
+      text-decoration: none;
+      &:hover{
+        color: $hover; background: $background-hover;
+      }
+    }
+    span{
+      font-family: $font;
+      }
+    }
+  }
+}
